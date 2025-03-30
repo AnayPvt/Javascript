@@ -1,0 +1,135 @@
+// ARRAYS
+
+/*
+() - PARENTHESIS
+[] - BRACKETS
+{} - BRACES / CURLY BRACES
+*/
+
+/*
+REPRESENTED IN SQUARE BRACKS SEPERATED BY COMMS AND THERE CAN BE DIFFERENT DATATYPES
+ARRAY AREN'T PRIMITIVE BUT ARE "ARRAY OBJECTS" INSTEAD I.E NON PRIMITIVE DATATYPE
+*/
+
+
+const myArr = [0 , 1 , null , true , 7 , 9];
+console.log(myArr[2])   
+
+// WE CAN USE INDEXING METHOD IN ARRAY UNLIKE PRIMITIVE DATATYPES
+
+
+let random = 12342
+console.log(random[2])    // HERE IT WILL JUST SAY UNDEFINED
+
+/*
+WHENEVER YOU PERFORM COPY OPERATION IN ARRAYS , IT MAKES "SHALLOW COPIES" , WHICH IS THE SAME FOR ANY
+JAVASCRIPT OBJECT
+
+SHALLOW COPY - A COPY WHOSE PROPERTIES SHARE THE SAME REFERENCE AS THE SOURCE OBJECT FROM WHICH THE
+               COPY WAS MADE , AS A RESULT WHEN WE CHANGE EITTTHER THE SOURCE OR THE COPY , IT MAY CAUSE
+               THE OTHER TO CHANGE TOO
+               
+DEEP COPY    - WHEREAS IN DEEP COPY  , THE SOURCE OBJECT REFERENCE AND THE COPY ITSELF ARE INDEPENDENT.
+*/
+
+// LENGTH PROPERTY : 
+
+const bcFan = ["asta"  , "yuno" , "yami" , "nacht" , "magna" , "lucius" , "zenon"]
+const ror = new Array("beelzebub" , "adam" , "zeus" , "shiva" , "jackTheRipper") 
+
+console.log(ror.length)   // CAN USE LENGTH "PROPERTY" IN ARRAY AS DEFAULT SO "NO PARENTHESIS"
+
+//"LENGTH" IS A PROPERTY NOTT A "METHOD/FN"
+
+console.log()
+
+console.log()
+
+// ARRAY METHODS:
+
+// 1) PUSH METHOD [ADDS INPUT/ARG GIVEN IN THE () AT THE "END"]
+
+ror.push(6) //PUSH THE GIVEN INPUT IN THE PARENTHESIS AT THE "END"                   
+console.log(ror)
+
+bcFan.push(6)
+console.log(bcFan)    
+
+// 2) POP METHOD (REMOVES THE LAST VALUE OF THE ARRAY) [NO NEED TO GIVE ANY INPUT/ARGUMENT]
+
+bcFan.pop()
+console.log(bcFan);   // WILL REMOVE "6" PREVIOUSLY ADDED BY PUSH METHOD
+
+// 3) SHIFT METHOD (REMOVES THE FIRST ELEMENT OF ARRAY)
+
+bcFan.shift()
+console.log(bcFan) // REMOVED ASTA
+
+// 4) UNSHIFT METHOD ( ADD ELEMENT AT FIRST BY GIVING ARGUMENT/INPUT IN PARENTHESIS)
+
+bcFan.unshift("ryuya")
+console.log(bcFan);   // ADDED RYUYA AS FIRST ELEMENT
+
+// EVEN THO TS NOT USED MUCH AS IT CHANGES THE POSITION OF ALL OTHER ELEMENTS
+
+
+bcFan.unshift("vanica" , "dante")  // CAN ADD MULTIPLE ELEMENTS TOO
+console.log(bcFan)
+
+
+// MORE METHODS ---- : 
+
+console.log(bcFan.includes("ryuya"))  // TRUE
+console.log(ror.indexOf("odin"))        // -1 CAUSE "ODIN" DONT EXIST IN ARRAY
+console.log(ror.indexOf("zeus"))        // ZEUS INDEX NO. IS "2" SO IT FIND INDEX NO
+
+
+// JOIN METHOD   [CONVERTS VALUES TO STRINNG , COMMA SEPERATED]
+
+
+console.log(ror.join(bcFan))   // WTFFFF?? LMAOOOO
+
+// THATS NOT HOW WE USE IT
+
+
+let newBcFan = bcFan.join()  // CREATED A NEW ARRAY I.E newBcFan
+
+console.log(newBcFan)
+console.log(bcFan)
+
+// VALUES ARE SAME BUT THE TYPE HAS CHANGED
+
+
+console.log(typeof newBcFan)  // STRING
+console.log(typeof bcFan)     // ARRAY OBJECT
+
+// SLICE [SIMILAR TO INDEXING] , SPLICE METHOD - 
+
+console.log()
+
+console.log("A" , ror)   // ORIGINAL ARRAY
+
+const slice = ror.slice(0 , 3)  // WONT INCLUDE 3 SIMILAR TO ANY OTHER SLICING
+console.log(slice);
+
+console.log("B" , ror) // ORIGINAL ARRAY REMAINS SAME
+
+// SPLICE METHOD
+
+console.log()
+
+const slice2 = ror.splice(0 , 3)
+console.log(slice2);     //RETURNED THE ARRAY WHICH IS REMOVED BY "SPLICE" STARTING FROM 0 UPTO 3 (NOT 3)
+
+console.log("C" , ror)   // ARRAY ATER SPLICE OPERATION
+
+/*      ***INTERVIEW QUES***
+
+THEREFORE THE MAIN DIFFERENCE IN "SLICE" AND "SPLICE" IS THAT SLICE DOES NOT AFFECT/ MANIPULATE THE
+ORIGINAL ARRAY WHEREAS SPLICE MANIPULATES THE ORIGINAL ARRAY
+
+IN SLICE , IT DOES INDEXING WITHOUT AFFECTING THE ORIGINAL
+WHEREAS IN SPLICE , IT REMOVES ELEMENTS STARTING FROM 1ST GIVEN INPUT AND REMOVES UPTO 2ND GIVEN INPUT
+*/
+
+ 

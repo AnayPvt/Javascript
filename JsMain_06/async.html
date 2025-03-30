@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ANAY</h1>
+    <button id="stop">STOP</button>
+    
+</body>
+
+<script>
+    const sayAnay = function(){
+        console.log("ANAY");
+    }
+    setTimeout(sayAnay , 2000)
+    // setInterval(sayAnay , 2000)
+    
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "best JS series"
+
+    }
+
+    const changeMe = setTimeout(changeText , 5000)
+
+    document.querySelector('#stop').addEventListener('click' , function(e){
+        clearTimeout(changeMe)
+        console.log('stopped');
+    })
+
+    // we can also use clearTimeout by using reference and storing timeout in variable wont change its execution
+
+    // here I gave the fn the access to stop the timeout execution using click event
+</script>
+</html>
+
+
+
+<!-- setimeout have a callback fn and second parameter as the time after which the code will execute   -->
+
+<!-- setInterval have a callback fn and second parameter agaain time , and its like loop but executes every iteration after a certain amt of time -->
+
+<!-- 
+
+great ex of setTimeout - the limited offer baits popping from websites after a few seconds
+
+-->

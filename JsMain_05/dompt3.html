@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body style = "color: aliceblue;background-color: #212121;">
+    <ul class="language">
+        <li>JS</li>
+    </ul>
+</body>
+<script>
+    function addLang(langName){ 
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+
+
+    }
+
+    addLang('rust')
+    addLang('python')
+    addLang('typescrript')
+
+    //   NOW ITS NOT THE MOST OPTIMIZED APPROACH BECAUSE THE DOM HAS TO TRAVERSE(PATH) THRUGH THE WHOLE STRUCTURE WHICH LEADS TO OPTIMIZATIION ISSUES
+    
+    function addOptiLang(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLang('goLang')
+
+    // EDIT (TO EDIT ALWYS FIRST SELECT)
+
+    const secondLang = document.querySelector('li:nth-child(2)')
+
+    const ThirdLang = document.querySelector('li:nth-child(3)')
+
+    secondLang.innerText = '<b>taleu<b>'
+
+        // HERE WE CAN SEE THE InnerText METHOD CANNOT RENDER THE HTML TAGS AND STYLES 
+
+    ThirdLang.innerHTML = '<b>taleu<b>'
+
+        // WHEREAS INNER HTML METHOD CAN RENDER SUCH TAGS AND STYLES WHICH CAUSES THE DIFFERENCE
+
+    // More optimized approach
+
+    const newLi = document.createElement('li')
+    newLi.innerHTML = "Mojo"
+
+// we can also use textContent or innerText instead of innerHTML
+
+    // document.querySelector('.language').appendChild(newLi)
+
+    // MORE METHODS TO RENDER EDITING
+
+
+    secondLang.replaceWith(newLi)
+
+    // When we have a reference , we can just use "replaceWith" method
+
+    // edit
+
+    const firstLang = document.querySelector("li:nth-child(1)")
+
+    // dont prefer outerHTML but we are just exploring rn
+
+    firstLang.outerHTML = '<li>Typescript</li>'
+
+    // remove
+
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove() // removed GOLANG
+
+</script>
+</html>
